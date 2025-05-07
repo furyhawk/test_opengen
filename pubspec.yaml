@@ -13,8 +13,8 @@ dependencies:
   json_annotation: ^4.8.1
   freezed_annotation: ^2.4.1
   openapi_generator_annotations: ^4.13.1
-  test_opengen_api:
-    path: ./lib/api/generated
+  # test_opengen_api:
+  #   path: ./lib/api/generated
 
 dev_dependencies:
   flutter_test:

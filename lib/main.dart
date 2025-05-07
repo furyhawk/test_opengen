@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-// Import the generated API client
-import 'package:test_opengen_api/test_opengen_api.dart';
+// Import the generated API client - use relative import instead of package import
+import 'api/generated/lib/test_opengen_api.dart';
 
 void main() {
   runApp(const MainApp());
@@ -45,14 +45,18 @@ class _ApiClientDemoState extends State<ApiClientDemo> {
         _apiResponse = 'Loading...';
       });
       
-      // Make an API call using the generated client
-      // Note: Update this with an actual endpoint from your API
-      // final response = await apiClient.getDefaultApi().someEndpoint();
-      
-      setState(() {
-        _apiResponse = 'API Response: Success!\n\n'
-            'Replace this example with actual API calls from your generated client';
-      });
+      // Use a simple health check endpoint for testing
+      try {
+        final response = await apiClient.getUtilsApi().utilsHealthCheck();
+        setState(() {
+          _apiResponse = 'API Health Check Response: ${response.toString()}';
+        });
+      } catch (e) {
+        // If health check fails, try to get available endpoints
+        setState(() {
+          _apiResponse = 'Available APIs: \n- ${apiClient.getUtilsApi().runtimeType}\n- ${apiClient.getLoginApi().runtimeType}\n- ${apiClient.getUsersApi().runtimeType}';
+        });
+      }
     } catch (e) {
       setState(() {
         _apiResponse = 'Error: ${e.toString()}';
