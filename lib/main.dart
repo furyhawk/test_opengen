@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 // Import the generated API client - use relative import instead of package import
-import 'api/generated/lib/test_opengen_api.dart';
+import 'package:test_opengen_api/test_opengen_api.dart';
 
 void main() {
   runApp(const MainApp());
