@@ -1,0 +1,12 @@
+input: lib/api/openapi.json
+output: lib/api/generated
+swagger_generator_options:
+  with_base_url: true
+  use_inheritance: true
+  use_required_attribute_for_headers: true
+  separate_models: true
+  enums_case_sensitive: true
+  include_if_null: false
+  use_path_for_request_names: true
+  use_default_null_for_lists: false
+  build_only_models: false
