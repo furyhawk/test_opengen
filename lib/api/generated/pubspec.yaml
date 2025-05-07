@@ -4,7 +4,7 @@ description: OpenAPI API client
 homepage: homepage
 
 environment:
-  sdk: '>=2.15.0 <3.0.0'
+  sdk: '>=3.0.6 <4.0.0'
 
 dependencies:
   dio: '^5.2.0'
@@ -12,6 +12,9 @@ dependencies:
   one_of_serializer: '>=1.5.0 <2.0.0'
   built_value: '>=8.4.0 <9.0.0'
   built_collection: '>=5.1.1 <6.0.0'
+
+dependency_overrides:
+  analyzer: 6.2.0
 
 dev_dependencies:
   built_value_generator: '>=8.4.0 <9.0.0'
